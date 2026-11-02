@@ -75,7 +75,7 @@ export const qaList = [
   },
   {
     keywords: ["bored", "boring", "nothing to do", "free", "free time"],
-    answer: "Bored? There are 340+ events live right now — hackathons, sports, cultural fests, gaming! Head to the Events section. 🎉",
+    answer: "Bored? Browse the sample events in the Events section — hackathons, sports, cultural fests, gaming! Head to the Events section. 🎉",
   },
   {
     keywords: ["are you human", "are you real", "are you bot", "are you ai", "robot"],
@@ -89,11 +89,11 @@ export const qaList = [
   /* PLATFORM OVERVIEW  */
   {
     keywords: ["what is campuseventhub", "about platform", "about this site", "about this app", "what does this do", "campuseventhub", "campus event hub", "this platform", "explain platform", "platform overview", "overview"],
-    answer: "CampusEventHub is India's inter-college event platform 🇮🇳 — students discover & register for events across 120+ colleges, and admins create & manage them. All free, forever! 🚀",
+    answer: "CampusEventHub is India's inter-college event platform 🇮🇳 — students discover & register for events across colleges, and admins create & manage them. All free, forever! 🚀",
   },
   {
     keywords: ["how many colleges", "colleges supported", "partner colleges", "how many universities", "colleges list"],
-    answer: "We're connected to 120+ partner colleges across India! 🏫 Any college can join as an admin partner.",
+    answer: "We're connected to partner colleges! 🏫 Any college can join as an admin partner.",
   },
   {
     keywords: ["types of events", "kind of events", "what events", "event types", "event categories", "categories"],
@@ -105,7 +105,7 @@ export const qaList = [
   },
   {
     keywords: ["how does it work", "how it works", "working", "explain", "process", "workflow"],
-    answer: "Simple 4-step flow 🚀\n1. Sign up — free, takes < 1 min\n2. Browse events from 120+ colleges\n3. Register — instant slot hold\n4. Attend & rate the event ⭐",
+    answer: "Simple 4-step flow 🚀\n1. Sign up — free, takes < 1 min\n2. Browse events from colleges\n3. Register — instant slot hold\n4. Attend & rate the event ⭐",
   },
 
   /*AUTHENTICATION*/
@@ -171,7 +171,7 @@ export const qaList = [
   },
   {
     keywords: ["rejected", "registration rejected", "why rejected", "not approved", "declined", "denied", "application rejected"],
-    answer: "Common reasons for rejection ❌\n• Slots full\n• Eligibility mismatch\n• College restriction\n• Deadline passed\n\nDon't worry — there are 340+ events! Check eligibility before registering next time.",
+    answer: "Common reasons for rejection ❌\n• Slots full\n• Eligibility mismatch\n• College restriction\n• Deadline passed\n\nDon't worry — there are other events! Check eligibility before registering next time.",
   },
   {
     keywords: ["cancel registration", "withdraw registration", "unregister", "cancel event", "remove registration", "drop registration", "undo registration"],
@@ -307,7 +307,7 @@ export const qaList = [
   },
   {
     keywords: ["student", "student features", "student dashboard", "student can", "what can student do"],
-    answer: "As a student you can 🎓\n• Discover events across 120+ colleges\n• Filter by category, date, college\n• Register in one click\n• Track status live\n• Rate & review events\n• Get real-time notifications",
+    answer: "As a student you can 🎓\n• Discover events across colleges\n• Filter by category, date, college\n• Register in one click\n• Track status live\n• Rate & review events\n• Get real-time notifications",
   },
   {
     keywords: ["what can you do", "your features", "your capabilities", "chatbot features", "how can you help", "what do you know"],
