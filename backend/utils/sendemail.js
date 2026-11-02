@@ -6,11 +6,17 @@ const sendEmail = async (to, subject, text, html = null) => {
       console.warn("[Email] Warning: Recipient address ('to') is missing. Skipping email.");
       return null;
     }
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      // Email is not configured (for example on the public demo): skip quietly.
+      return null;
+    }
     console.log(`[Email] Attempting to send to: ${to} (HTML: ${!!html})`);
     
     // Using 'service: gmail' is the standard for Gmail SMTP
     const transporter = nodemailer.createTransport({
       service: 'gmail',
+      connectionTimeout: 8000,
+      socketTimeout: 8000,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
