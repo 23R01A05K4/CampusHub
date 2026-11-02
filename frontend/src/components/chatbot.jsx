@@ -217,9 +217,9 @@ const Chatbot = () => {
             <div className="cb-ribbon">
               <span>⚡ Instant answers</span>
               <span className="cb-ribbon-sep">·</span>
-              <span>📅 340+ events</span>
+              <span>📅 Demo data</span>
               <span className="cb-ribbon-sep">·</span>
-              <span>🏫 120+ colleges</span>
+              <span>🏫 Sample content</span>
             </div>
 
             {/* MESSAGES */}
