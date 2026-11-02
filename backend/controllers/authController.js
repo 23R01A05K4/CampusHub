@@ -5,7 +5,12 @@ const { getWelcomeEmail, getOTPEmail } = require('../utils/emailTemplates');
 const sendEmail = require('../utils/sendemail');
 
 exports.register = async (req, res) => {
-  const { name, email, password, role, college } = req.body;
+  const { name, email, password, college } = req.body;
+  // Public sign-up always creates a student. Elevated roles are assigned server-side only.
+  const role = 'student';
+  if (typeof email !== 'string' || typeof password !== 'string' || password.length < 6) {
+    return res.status(400).json({ msg: 'A valid email and a password of at least 6 characters are required' });
+  }
   try {
     let user = await User.findOne({ email });
     if (user) return res.status(400).json({ msg: 'User already exists' });
@@ -35,6 +40,7 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
   const { email, password } = req.body;
   try {
+    if (typeof email !== 'string' || typeof password !== 'string') return res.status(400).json({ msg: 'Invalid credentials' });
     const user = await User.findOne({ email }).select('+password');
     if (!user) return res.status(400).json({ msg: 'Invalid credentials' });
 
@@ -83,8 +89,6 @@ exports.sendOTP = async (req, res) => {
     const otpHtml = getOTPEmail(otp);
     const message = `Your password reset OTP is: ${otp}\nValid for 10 minutes.`;
     
-    // Log OTP for easy access during testing
-    console.log(`OTP for ${email}: ${otp}`);
 
     try {
       await sendEmail(email, "Password Reset OTP", message, otpHtml);
