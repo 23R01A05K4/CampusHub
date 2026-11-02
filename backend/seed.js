@@ -22,6 +22,12 @@ async function run() {
     if (!u) {
       u = await User.create({ name, email, role, college: "Demo College", password: await bcrypt.hash(password, 10), demoReadOnly: true, profileComplete: true });
       console.log("Created", role, email);
+    } else if (!(await bcrypt.compare(password, u.password))) {
+      // Keep the demo password in sync with the environment (allows rotation).
+      u.password = await bcrypt.hash(password, 10);
+      u.demoReadOnly = true;
+      await u.save();
+      console.log("Updated password for", email);
     }
     return u;
   };
