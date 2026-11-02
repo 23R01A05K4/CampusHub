@@ -103,6 +103,11 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    // Demo accounts seeded by seed.js can browse but never change data
+    demoReadOnly: {
+      type: Boolean,
+      default: false,
+    },
     resetPasswordOTP: String,
     resetPasswordOTPExpire: Date,
    
