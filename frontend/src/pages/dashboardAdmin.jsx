@@ -661,13 +661,14 @@ export default function AdminDashboard() {
             {/* Overview Tab */}
             {activeTab === 'overview' && (
               <>
+                <div style={{margin:"0 0 16px",padding:"10px 14px",borderRadius:10,background:"rgba(99,102,241,0.15)",border:"1px solid rgba(99,102,241,0.4)",fontSize:14}}>Public demo: this admin account is read-only. You can browse, but create, edit and delete actions are blocked. Sign up as a student to try registering for an event.</div>
                 {/* Stats Cards */}
                 <div className="stats-grid">
                   <StatCard
                     title="Total Events"
                     value={stats.totalEvents}
                     icon="📅"
-                    trend="+12% from last month"
+                    trend=""
                     trendType="positive"
                     onClick={() => setActiveTab('events')}
                   />
@@ -675,7 +676,7 @@ export default function AdminDashboard() {
                     title="Active Events"
                     value={stats.activeEvents}
                     icon="🔥"
-                    trend="3 ending soon"
+                    trend=""
                     trendType="warning"
                     onClick={() => setActiveTab('events')}
                   />
@@ -683,14 +684,14 @@ export default function AdminDashboard() {
                     title="Total Registrations"
                     value={stats.totalRegistrations}
                     icon="👥"
-                    trend="+245 this week"
+                    trend=""
                     trendType="positive"
                   />
                   <StatCard
                     title="Total Revenue"
                     value={`$${stats.totalRevenue?.toLocaleString()}`}
                     icon="💰"
-                    trend={`+${stats.growth}% growth`}
+                    trend=""
                     trendType="positive"
                   />
                 </div>
