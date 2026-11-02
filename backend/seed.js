@@ -5,11 +5,13 @@ const bcrypt = require("bcryptjs");
 require("dotenv").config();
 const User = require("./models/User");
 const Event = require("./models/Event");
+const { getMongoUri } = require("./config/db");
 
 async function run() {
-  const { MONGO_URI, DEMO_ADMIN_PASSWORD, DEMO_STUDENT_PASSWORD } = process.env;
+  const { DEMO_ADMIN_PASSWORD, DEMO_STUDENT_PASSWORD } = process.env;
+  const MONGO_URI = getMongoUri();
   if (!MONGO_URI || !DEMO_ADMIN_PASSWORD || !DEMO_STUDENT_PASSWORD) {
-    console.log("Seed skipped: MONGO_URI, DEMO_ADMIN_PASSWORD or DEMO_STUDENT_PASSWORD not set.");
+    console.log("Seed skipped: database settings, DEMO_ADMIN_PASSWORD or DEMO_STUDENT_PASSWORD not set.");
     return;
   }
   if (DEMO_ADMIN_PASSWORD.length < 12 || DEMO_STUDENT_PASSWORD.length < 12) throw new Error("Demo passwords must be 12+ characters.");
