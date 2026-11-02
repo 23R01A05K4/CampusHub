@@ -13,7 +13,7 @@ The demo runs on free hosting. After 15 minutes idle it sleeps, so the first loa
 - Student dashboard and admin dashboard, plus admin pages for registrations and participants.
 - Three sample events are seeded. The demo database is shared, so do not enter real personal data.
 
-Not active in the demo: Google sign-in, email (welcome mail, OTP, reminders) and persistent uploads. Uploaded images are stored on the host's temporary disk and disappear on restart. The landing page figures (for example the event, college and student counts) are static marketing text from the original project, not live statistics.
+Not active in the demo: Google and GitHub sign-in (the buttons are hidden unless REACT_APP_ENABLE_OAUTH is set to true at build time), email (welcome mail, OTP, reminders) and persistent uploads. Uploaded images are stored on the host's temporary disk and disappear on restart. The demo admin account is read-only. Testimonials and the sample events on the landing page are illustrative content from the original project, not real users or live statistics.
 
 ## Tech stack
 
