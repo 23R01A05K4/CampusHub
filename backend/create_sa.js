@@ -9,8 +9,11 @@ const createSuperAdmin = async () => {
     await mongoose.connect(process.env.MONGO_URI);
     console.log('Connected to MongoDB');
 
-    const email = 'superadmin@example.com';
-    const password = 'password123';
+    const email = process.env.SUPERADMIN_EMAIL;
+    const password = process.env.SUPERADMIN_PASSWORD;
+    if (!email || !password || password.length < 12) {
+      throw new Error('Set SUPERADMIN_EMAIL and SUPERADMIN_PASSWORD (12+ characters) in the environment first.');
+    }
     
     let user = await User.findOne({ email });
     if (user) {
