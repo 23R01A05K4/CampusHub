@@ -50,7 +50,7 @@ const TESTIMONIALS = [
 ];
 
 const FEATURES_BENTO = [
-  { icon: "🗺️", title: "Discover Nearby", desc: "Location-aware event discovery across 100+ campuses.", span: "wide", gradient: "linear-gradient(135deg,#667eea,#764ba2)" },
+  { icon: "🗺️", title: "Discover Nearby", desc: "Location-aware event discovery across campuses.", span: "wide", gradient: "linear-gradient(135deg,#667eea,#764ba2)" },
   { icon: "🔔", title: "Smart Alerts", desc: "Instant notifications for registrations & updates.", span: "tall", gradient: "linear-gradient(135deg,#764ba2,#a855f7)" },
   { icon: "🎟️", title: "1-Click Register", desc: "Register for any event in seconds.", span: "normal", gradient: "linear-gradient(135deg,#5a67d8,#667eea)" },
   { icon: "📊", title: "Live Dashboard", desc: "Track registrations, tickets & team analytics.", span: "normal", gradient: "linear-gradient(135deg,#667eea,#a855f7)" },
