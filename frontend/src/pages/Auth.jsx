@@ -120,8 +120,8 @@ const Auth = () => {
       <div className="brand-section">
         <div className="brand-content">
           <div className="stats-badge">
-            <span className="stats-number">340+</span>
-            <span className="stats-text">Active Events</span>
+            <span className="stats-number">Demo</span>
+            <span className="stats-text">Sample data only</span>
           </div>
           
           <h1 className="brand-title">
@@ -133,13 +133,13 @@ const Auth = () => {
           </h1>
           
           <p className="brand-description">
-            Discover hackathons, sports meets, cultural fests and more across 120+ colleges. 
+            Discover hackathons, sports meets, cultural fests and more across colleges. 
             Register instantly. Connect deeply.
           </p>
           
           <div className="student-count">
-            <span className="count-number">50,000+</span>
-            <span className="count-text">students already on board</span>
+            <span className="count-number">Free</span>
+            <span className="count-text">student sign-up, no card needed</span>
           </div>
           
           <div className="feature-tags">
@@ -288,6 +288,7 @@ const Auth = () => {
           </div>
           
           {/* Social Login */}
+          {process.env.REACT_APP_ENABLE_OAUTH === 'true' && (
           <div className="social-login">
             <div className="divider">
               <span>or continue with</span>
@@ -316,6 +317,7 @@ const Auth = () => {
               </button>
             </div>
           </div>
+          )}
         </div>
         
         <div className="language-selector">
