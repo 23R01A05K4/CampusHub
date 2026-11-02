@@ -75,11 +75,7 @@ const Home = () => {
   const [footerRef, footerInView] = useInView(0.05);
 
   /* animated counters (fire once statsInView) */
-  const students = useCounter(50000, 2200, statsInView);
-  const colleges = useCounter(120, 1800, statsInView);
-  const events = useCounter(340, 2000, statsInView);
-  const prizes = useCounter(500, 2400, statsInView);
-
+  
   /* scroll & mouse */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -159,7 +155,7 @@ const Home = () => {
           {/* LEFT — staggered fade-up on mount */}
           <div className="lp-hero__left">
             <div className="lp-hero__badge lp-anim lp-anim--fade-up" style={{ '--delay': '0ms' }}>
-              <span className="lp-badge__dot" /> 340+ Active Events
+              <span className="lp-badge__dot" /> Open-source demo
             </div>
 
             <h1 className="lp-hero__heading lp-anim lp-anim--fade-up" style={{ '--delay': '120ms' }}>
@@ -170,7 +166,7 @@ const Home = () => {
 
             <p className="lp-hero__sub lp-anim lp-anim--fade-up" style={{ '--delay': '220ms' }}>
               Discover hackathons, sports meets, cultural fests and more across
-              120+ colleges. Register instantly. Connect deeply.
+              colleges. Register instantly. Connect deeply.
             </p>
 
             <div className="lp-hero__actions lp-anim lp-anim--fade-up" style={{ '--delay': '320ms' }}>
@@ -189,7 +185,7 @@ const Home = () => {
                 ))}
               </div>
               <p className="lp-hero__proof-text">
-                <strong>50,000+</strong> students already on board
+                <strong>Demo build</strong> with sample data
               </p>
             </div>
           </div>
@@ -215,8 +211,8 @@ const Home = () => {
                 <p className="lp-mosaic-card__title">Cultural Fest</p>
               </div>
               <div className="lp-mosaic-card lp-mosaic-card--stat">
-                <span className="lp-mosaic-stat">120+</span>
-                <p>Colleges</p>
+                <span className="lp-mosaic-stat">Demo</span>
+                <p>Sample data</p>
               </div>
             </div>
           </div>
@@ -234,10 +230,10 @@ const Home = () => {
         ref={statsRef}
       >
         {[
-          { val: students, suffix: '+', label: 'Students Connected' },
-          { val: colleges, suffix: '+', label: 'Partner Colleges' },
-          { val: events, suffix: '+', label: 'Events Hosted' },
-          { val: prizes, suffix: 'K', label: 'Prize Pool (₹)' },
+          { val: 'Free', suffix: '', label: 'Student sign-up' },
+          { val: 'Demo', suffix: '', label: 'Sample data only' },
+          { val: 'Read-only', suffix: '', label: 'Demo admin account' },
+          { val: 'Open', suffix: '', label: 'Source on GitHub' },
         ].map((s, i) => (
           <div
             className={`lp-stat-item lp-stagger ${statsInView ? 'lp-stagger--visible' : ''}`}
@@ -289,7 +285,7 @@ const Home = () => {
         <div className="lp-section__header lp-stagger lp-stagger--visible" style={{ '--stagger': 0 }}>
           <span className="lp-pill">Don't Miss Out</span>
           <h2 className="lp-section__title">Upcoming Events</h2>
-          <p className="lp-section__sub">Hand-picked highlights across colleges this semester.</p>
+          <p className="lp-section__sub">Sample highlights shown for illustration.</p>
         </div>
 
         <div className="lp-events__track-wrap">
@@ -363,8 +359,8 @@ const Home = () => {
         ref={testiRef}
       >
         <div className="lp-section__header lp-stagger lp-stagger--visible" style={{ '--stagger': 0 }}>
-          <span className="lp-pill">Student Stories</span>
-          <h2 className="lp-section__title">Loved by Students<br />Across India</h2>
+          <span className="lp-pill">Sample Quotes (illustrative, not real users)</span>
+          <h2 className="lp-section__title">What Students Might Say</h2>
         </div>
 
         <div className="lp-testi__stage">
@@ -402,7 +398,7 @@ const Home = () => {
             Ready to Write<br />Your Campus Story?
           </h2>
           <p className="lp-cta-banner__sub lp-stagger lp-stagger--visible" style={{ '--stagger': 1 }}>
-            Join 50,000+ students. It's free, forever.
+            Create a free student account and try registering for an event.
           </p>
           <div className="lp-cta-banner__actions lp-stagger lp-stagger--visible" style={{ '--stagger': 2 }}>
             <button className="lp-btn lp-btn--white lp-btn--lg" onClick={() => navigate('/register')}>
