@@ -18,7 +18,7 @@ async function run() {
   await mongoose.connect(MONGO_URI);
 
   const ensure = async (email, name, role, password) => {
-    let u = await User.findOne({ email });
+    let u = await User.findOne({ email }).select("+password");
     if (!u) {
       u = await User.create({ name, email, role, college: "Demo College", password: await bcrypt.hash(password, 10), demoReadOnly: true, profileComplete: true });
       console.log("Created", role, email);
